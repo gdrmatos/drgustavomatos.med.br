@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currículo | Dr. Gustavo Matos · Oncologia Clínica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #152642; --blue: #3652A6; --blue-soft: #B5D1E6;
+      --off-white: #F6FAFD; --lime: #C7F018; --white: #FFFFFF;
+      --font-head: 'Host Grotesk', sans-serif;
+      --font-body: 'Lexend', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--off-white); color: var(--navy); }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 4rem;
+      background: rgba(21,38,66,0.97);
+      border-bottom: 1px solid rgba(199,240,24,0.12);
+    }
+    .nav-logo { display:flex; align-items:center; gap:0.9rem; text-decoration:none; }
+    .nav-wordmark .name { font-family:var(--font-head); color:#fff; font-size:1rem; }
+    .nav-wordmark .name span { font-weight:300; }
+    .nav-wordmark .name strong { font-weight:700; }
+    .nav-wordmark .specialty { font-family:var(--font-head); font-size:0.52rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--blue-soft); display:block; margin-top:3px; }
+    .nav-back { font-family:var(--font-head); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.6); text-decoration:none; display:flex; align-items:center; gap:0.5rem; transition:color 0.2s; }
+    .nav-back:hover { color:#fff; }
+
+    .page-hero {
+      background: var(--navy);
+      padding: 4rem 4rem 3rem;
+    }
+    .page-eyebrow {
+      font-family: var(--font-head);
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--lime); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .page-eyebrow::before { content:''; width:24px; height:1px; background:var(--lime); }
+    .page-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: #fff; line-height: 1.1;
+    }
+    .page-title span { font-weight: 300; }
+    .page-subtitle {
+      font-family: var(--font-head);
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--blue-soft); margin-top: 0.6rem;
+    }
+
+    .cv-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem;
+    }
+
+    .cv-section { margin-bottom: 3rem; }
+    .cv-section-title {
+      font-family: var(--font-head);
+      font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.7rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(181,209,230,0.4);
+    }
+    .cv-section-title::before { content:''; width:20px; height:2px; background:var(--lime); }
+
+    .cv-item { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; margin-bottom: 1.8rem; }
+    .cv-year {
+      font-family: var(--font-head);
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--blue); line-height: 1.5;
+      padding-top: 2px;
+    }
+    .cv-content-title {
+      font-family: var(--font-head);
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 0.25rem;
+    }
+    .cv-content-sub {
+      font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 300;
+      color: #5a6a80; line-height: 1.6;
+    }
+    .cv-content-note {
+      font-family: var(--font-body);
+      font-size: 0.78rem; font-weight: 300;
+      color: #8a9aac; margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .cv-text {
+      font-family: var(--font-body);
+      font-size: 0.92rem; font-weight: 300;
+      color: #3a4a60; line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .cv-text strong { font-weight: 600; color: var(--navy); }
+
+    .lattes-box {
+      background: var(--navy);
+      border-radius: 4px;
+      padding: 1.5rem 2rem;
+      display: flex; align-items: center; gap: 1.2rem;
+      margin-top: 2rem; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .lattes-box:hover { opacity: 0.88; }
+    .lattes-box svg { flex-shrink: 0; color: var(--lime); }
+    .lattes-box-text strong {
+      display: block;
+      font-family: var(--font-head); font-size: 0.88rem; font-weight: 700;
+      color: #fff; margin-bottom: 3px;
+    }
+    .lattes-box-text span {
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 300;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .tag {
+      font-family: var(--font-head); font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--blue);
+      border: 1px solid rgba(54,82,166,0.3);
+      padding: 0.3rem 0.7rem; border-radius: 2px;
+    }
+
+    footer { background: var(--navy); padding: 2rem 4rem; text-align: center; }
+    footer p { font-family: var(--font-head); font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
+
+    @media(max-width:768px){
+      nav { padding: 1rem 1.5rem; }
+      .page-hero { padding: 3rem 1.5rem 2rem; }
+      .cv-body { padding: 2.5rem 1.5rem; }
+      .cv-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .cv-year { font-size: 0.68rem; color: var(--blue); }
+      footer { padding: 1.5rem; }
+    }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="42" viewBox="160 390 175 210" xmlns="http://www.w3.org/2000/svg">
+  <path transform="matrix(1,0,0,-1,264.0184,567.4787)" d="M0 0V22.743C0 30.715 6.46 37.174 14.431 37.174H27.355C36.528 37.174 42.883 27.944 39.535 19.407 35.229 8.439 29.503-1.137 22.726-8.762 14.8-17.698 0-11.943 0 0M0 134.952C0 146.987 14.887 152.598 22.859 143.575 38.282 126.114 48.263 98.499 48.263 67.479 48.263 62.11 47.963 56.846 47.391 51.714 46.646 45.088 41.076 40.06 34.409 40.06H14.431C6.46 40.06 0 46.519 0 54.491ZM-2.886 54.491C-2.886 46.519-9.345 40.06-17.317 40.06H-66.151C-72.824 40.06-78.394 45.088-79.139 51.714-79.71 56.846-80.01 62.11-80.01 67.479-80.01 120.157-51.235 163.011-15.874 163.011H-15.741C-8.606 162.988-2.886 157.088-2.886 149.954ZM-2.886-14.997C-2.886-22.131-8.606-28.03-15.741-28.054H-15.874C-39.448-28.054-60.09-9.011-71.231 19.291-74.613 27.875-68.327 37.174-59.103 37.174H-17.317C-9.345 37.174-2.886 30.715-2.886 22.743ZM40.222 138.063C29.064 152.205 15.152 161.614 0 165.481-.958 165.73-1.922 165.949-2.886 166.151-7.14 167.028-11.475 167.479-15.874 167.479-59.53 167.479-95.047 122.622-95.047 67.479-95.047 58.076-94.025 48.869-92.051 40.06-91.832 39.09-91.607 38.132-91.37 37.174-87.601 22.148-81.02 8.376-71.969-3.105-57.007-22.073-37.087-32.521-15.874-32.521-11.452-32.521-7.111-32.06-2.886-31.176-1.916-30.974-.958-30.749 0-30.501 28.186-23.228 50.964 3.019 59.582 37.174 59.825 38.126 60.055 39.09 60.275 40.06 62.243 48.776 63.3 57.977 63.3 67.479 63.3 94.13 55.103 119.193 40.222 138.063" fill="#B5D1E6"/>
+</svg>
+      <div class="nav-wordmark">
+        <div class="name"><strong>Gustavo</strong> <span>Matos</span></div>
+        <div class="specialty">Oncologia Clínica</div>
+      </div>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar
+    </a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-eyebrow">Perfil Profissional</div>
+    <h1 class="page-title"><strong>Gustavo</strong> <span>Matos</span></h1>
+    <div class="page-subtitle">CRM DF 20.584 · RQE 17270 · Oncologista Clínico</div>
+  </div>
+
+  <div class="cv-body">
+
+    <!-- FORMAÇÃO -->
+    <div class="cv-section">
+      <div class="cv-section-title">Formação Médica</div>
+
+      <div class="cv-item">
+        <div class="cv-year">2013</div>
+        <div>
+          <div class="cv-content-title">Graduação em Medicina</div>
+          <div class="cv-content-sub">Escola Superior de Ciências da Saúde (ESCS) — Brasília, DF</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2014 – 2016</div>
+        <div>
+          <div class="cv-content-title">Residência Médica em Clínica Médica</div>
+          <div class="cv-content-sub">Escola Paulista de Medicina / UNIFESP — São Paulo, SP</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2016 – 2019</div>
+        <div>
+          <div class="cv-content-title">Residência Médica em Oncologia Clínica</div>
+          <div class="cv-content-sub">Instituto do Câncer do Estado de São Paulo (ICESP) / Hospital das Clínicas da FMUSP — São Paulo, SP</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2022 – 2024</div>
+        <div>
+          <div class="cv-content-title">Fellowship em Neuro-Oncologia</div>
+          <div class="cv-content-sub">Princess Margaret Cancer Centre — Universidade de Toronto, Canadá</div>
+          <div class="cv-content-note">Supervisor: Dr. Warren Mason. Participação como subinvestigador em ensaios clínicos. Atividade voluntária no ambulatório de Sarcoma sob supervisão da Dra. Abha Gupta.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMAÇÃO COMPLEMENTAR -->
+    <div class="cv-section">
+      <div class="cv-section-title">Formação Complementar</div>
+
+      <div class="cv-item">
+        <div class="cv-year"></div>
+        <div>
+          <div class="cv-content-title">Pós-graduação em Docência no Ensino em Saúde</div>
+          <div class="cv-content-sub">Preceptor de residência médica</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year"></div>
+        <div>
+          <div class="cv-content-title">Pós-graduação em Políticas Públicas e Gestão Governamental</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATUAÇÃO PROFISSIONAL -->
+    <div class="cv-section">
+      <div class="cv-section-title">Atuação Profissional</div>
+
+      <div class="cv-item">
+        <div class="cv-year">2019 – 2021</div>
+        <div>
+          <div class="cv-content-title">Oncologista Assistente</div>
+          <div class="cv-content-sub">Hospital Sírio-Libanês — Brasília, DF</div>
+          <div class="cv-content-note">Equipe do Dr. Gustavo Fernandes. Foco em Tumores do SNC e Sarcoma.</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2019 – 2022</div>
+        <div>
+          <div class="cv-content-title">Oncologista Clínico</div>
+          <div class="cv-content-sub">Hospital de Base do Distrito Federal — Brasília, DF</div>
+          <div class="cv-content-note">Atendimento em Tumores do SNC, Sarcoma e Tumores de Pele.</div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2021 – atual</div>
+        <div>
+          <div class="cv-content-title">Oncologista Clínico Titular</div>
+          <div class="cv-content-sub">Hospital Sírio-Libanês — Brasília, DF</div>
+          <div class="cv-content-note">Área de Tumores do Sistema Nervoso Central e Sarcoma.</div>
+          <div class="tag-list">
+            <span class="tag">Neuro-Oncologia</span>
+            <span class="tag">Sarcoma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-year">2024 – atual</div>
+        <div>
+          <div class="cv-content-title">Oncologista Clínico</div>
+          <div class="cv-content-sub">Hospital Universitário de Brasília (HUB / HU-Brasil) — Brasília, DF</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÁREAS DE INTERESSE -->
+    <div class="cv-section">
+      <div class="cv-section-title">Áreas de Atuação</div>
+      <div class="tag-list">
+        <span class="tag">Neuro-Oncologia</span>
+        <span class="tag">Sarcoma</span>
+        <span class="tag">Adolescentes e Adultos Jovens (AYA)</span>
+        <span class="tag">Ensaios Clínicos</span>
+        <span class="tag">Educação Médica</span>
+        <span class="tag">Políticas Públicas em Saúde</span>
+      </div>
+    </div>
+
+    <!-- CURRÍCULO LATTES -->
+    <div class="cv-section">
+      <div class="cv-section-title">Produção Acadêmica</div>
+      <p class="cv-text">Detalhes sobre publicações, participações em congressos e demais atividades acadêmicas estão disponíveis no Currículo Lattes.</p>
+      <a href="http://lattes.cnpq.br/7642217014641962" target="_blank" class="lattes-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <div class="lattes-box-text">
+          <strong>Currículo Lattes — CNPq</strong>
+          <span>lattes.cnpq.br/7642217014641962</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr. Gustavo Matos · Oncologia Clínica · CRM DF 20.584</p>
+  </footer>
+
+</body>
+</html>
