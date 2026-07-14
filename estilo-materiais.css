@@ -1,0 +1,202 @@
+/* ============================================================
+   estilo-materiais.css
+   Folha de estilo compartilhada pelas páginas de materiais.
+   Reaproveita as mesmas variáveis, cores e fontes do index.html
+   para manter consistência total com a identidade da marca.
+   ------------------------------------------------------------
+   NOTA (LGPD): as fontes vêm do Google Fonts, exatamente como no
+   index.html — visitar o site já faz essa requisição, então as
+   páginas de materiais não introduzem nenhuma exposição nova.
+   Se um dia quiser eliminar QUALQUER chamada externa, é possível
+   hospedar a Host Grotesk localmente (os .ttf estão na pasta da
+   marca, "3. Fontes/Host_Grotesk/") e trocar o <link> por @font-face.
+   ============================================================ */
+
+/* ── TOKENS (iguais aos do index.html) ── */
+:root {
+  --navy:      #152642;
+  --blue:      #3652A6;
+  --blue-soft: #B5D1E6;
+  --off-white: #F6FAFD;
+  --lime:      #C7F018;
+  --white:     #FFFFFF;
+  --text-dark: #152642;
+  --text-mid:  #3652A6;
+
+  --font-head: 'Host Grotesk', sans-serif;
+  --font-body: 'Lexend', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* leitura */
+  --largura-leitura: 720px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── CABEÇALHO ── */
+.material-header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--lime);
+}
+.material-header-inner {
+  max-width: var(--largura-leitura);
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.material-marca {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+}
+.material-marca span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+  margin-top: 0.15rem;
+}
+.material-voltar {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lime);
+  text-decoration: none;
+  transition: opacity 0.2s var(--ease-out);
+}
+.material-voltar:hover { opacity: 0.7; }
+
+/* ── ARTIGO ── */
+.material-artigo {
+  max-width: var(--largura-leitura);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem;
+}
+
+.material-eyebrow {
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.8rem;
+}
+
+.material-artigo h1 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.material-subtitulo {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  margin-bottom: 2.2rem;
+}
+
+.material-artigo h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.45rem;
+  color: var(--navy);
+  margin: 2.6rem 0 0.9rem;
+}
+.material-artigo h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: var(--blue);
+  margin: 1.8rem 0 0.6rem;
+}
+
+.material-artigo p { margin-bottom: 1.15rem; }
+
+.material-artigo a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.material-artigo ul,
+.material-artigo ol {
+  margin: 0 0 1.15rem 1.3rem;
+  padding-left: 0.4rem;
+}
+.material-artigo li { margin-bottom: 0.5rem; }
+.material-artigo ul li::marker { color: var(--lime); }
+
+.material-artigo strong { font-weight: 600; color: var(--navy); }
+
+/* destaque / citação */
+.material-artigo blockquote {
+  border-left: 3px solid var(--lime);
+  background: var(--white);
+  padding: 1rem 1.3rem;
+  margin: 1.6rem 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-mid);
+  font-style: italic;
+}
+
+hr.material-sep {
+  border: none;
+  border-top: 1px solid rgba(21, 38, 66, 0.12);
+  margin: 2.6rem 0;
+}
+
+/* ── RODAPÉ ── */
+.material-footer {
+  max-width: var(--largura-leitura);
+  margin: 2rem auto 0;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid rgba(21, 38, 66, 0.12);
+}
+.material-aviso {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  opacity: 0.85;
+  margin-bottom: 1.2rem;
+}
+.material-footer-marca {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.material-footer a { color: var(--blue); text-decoration: none; }
+.material-footer a:hover { text-decoration: underline; }
+
+/* ── RESPONSIVO ── */
+@media (max-width: 520px) {
+  .material-artigo { padding-top: 2.4rem; }
+  .material-header-inner { padding: 1.1rem 1.2rem; }
+}

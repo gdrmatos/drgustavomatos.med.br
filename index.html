@@ -1402,17 +1402,17 @@
       position: absolute;
       top: 12px; right: 14px;
       z-index: 10;
-      background: rgba(21,38,66,0.12);
+      background: rgba(255,255,255,0.12);
       border: none;
-      color: var(--navy);
+      color: #fff;
       width: 30px; height: 30px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
       display: flex; align-items: center; justify-content: center;
       transition: background 0.2s;
     }
-    .artigo-modal-close:hover { background: rgba(21,38,66,0.2); }
+    .artigo-modal-close:hover { background: rgba(255,255,255,0.25); }
     .artigo-modal-header {
       background: var(--navy);
       padding: 2rem 2rem 1.5rem;
@@ -3073,6 +3073,16 @@ showTopics();
         <div class="sidebar-link-text">
           <strong>Currículo Lattes / CV</strong>
           <span>Ver currículo completo</span>
+        </div>
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Materiais</div>
+      <a href="materiais/exemplo.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5D1E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        <div class="sidebar-link-text">
+          <strong>O que é a oncologia clínica?</strong>
+          <span>Texto informativo para pacientes</span>
         </div>
       </a>
     </div>
